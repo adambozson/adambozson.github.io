@@ -1,12 +1,17 @@
+// Google fonts
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700|Ovo');
+
 // Modular scale calculator built into your Sass http://modularscale.com
 @import "../node_modules/modularscale-sass/libsass/scss/main";
-
 $modularscale: (
   base: 1rem, // The browser default, typically `16px`
   ratio: 1.5
 );
 
-// $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// Custom Boostrap variable overrides
+$font-family-sans-serif: 'Muli', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-serif: 'Ovo', Times, serif;
+$headings-font-family: $font-family-serif;
 
 $font-size-base:              ms(0);
 $font-size-lg:                ms(1);
