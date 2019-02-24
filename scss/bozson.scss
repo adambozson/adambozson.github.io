@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ovo|Asap');
 
 // Modular scale calculator built into your Sass http://modularscale.com
-@import "../node_modules/modularscale-sass/libsass/scss/main";
+@import "../node_modules/modularscale-sass/stylesheets/modularscale";
 $modularscale: (
   base: 1rem, // The browser default, typically `16px`
   ratio: 1.25
@@ -25,5 +25,31 @@ $h4-font-size:                ms(0);
 $h5-font-size:                ms(0);
 $h6-font-size:                ms(0);
 
+body {
+  padding-top: 10%;
+}
+
+// Remove the lg and xl size classes
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px
+);
+
 // Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+// Font Awesome Brands
+@import "../node_modules/@fortawesome/fontawesome-free/css/brands.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css";
+
+.fab {
+  color: $body-color;
+  @include hover-focus {
+    text-decoration: none;
+  }
+}
