@@ -43,10 +43,6 @@ $container-max-widths: (
 // Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-// Font Awesome Brands
-@import "../node_modules/@fortawesome/fontawesome-free/css/brands.css";
-@import "../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css";
-
 .head-logo {
   color: $body-color;
   width:  1.5rem;
