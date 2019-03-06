@@ -4,7 +4,7 @@
   "description": "My personal website",
   "scripts": {
     "build": "npm-run-all --parallel css",
-    "css": "node-sass scss -o css",
+    "css": "node-sass scss/bozson.scss -o css/",
     "js-min-copy": "cross-env-shell shx mkdir -p js/ && cross-env-shell cp node_modules/bootstrap/dist/js/bootstrap.min.js js/bootstrap.min.js"
   },
   "repository": {

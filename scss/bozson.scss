@@ -1,5 +1,13 @@
 // Google fonts
-@import url('https://fonts.googleapis.com/css?family=Ovo|Asap');
+@import url("https://fonts.googleapis.com/css?family=Ovo|Asap");
+
+// Font Awesome
+$fa-font-path: "../fonts";
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/brands.scss";
+
+// Academicons
+@import "../css/academicons.min.css";
 
 // Modular scale calculator built into your Sass http://modularscale.com
 @import "../node_modules/modularscale-sass/stylesheets/modularscale";
@@ -28,7 +36,7 @@ $h6-font-size:                ms(0);
 $enable-responsive-font-sizes: true;
 
 body {
-  padding-top: 10%;
+  padding-top: 7.5%;
 }
 
 // Remove the lg and xl size classes
@@ -46,9 +54,21 @@ $container-max-widths: (
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 .head-logo {
-  color: $body-color;
-  width:  1.5rem;
-  @include hover-focus {
-    text-decoration: none;
+  a {
+    color: $body-color;
+    width:  1.75rem;
+    @include hover-focus {
+      text-decoration: none;
+      color: $link-hover-color;
+    }
+    margin-bottom: 1rem;
   }
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+.pubs li {
+  margin-bottom: 0.75rem;
 }
