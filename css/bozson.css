@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Ovo|Asap");
 body {
-  padding-top: 10%; }
+  padding-top: 7.5%; }
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -5999,8 +5999,10 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-.head-logo {
+.head-logo a {
   color: #212529;
-  width: 1.5rem; }
-  .head-logo:hover, .head-logo:focus {
-    text-decoration: none; }
+  width: 1.75rem;
+  margin-bottom: 1rem; }
+  .head-logo a:hover, .head-logo a:focus {
+    text-decoration: none;
+    color: #0056b3; }
