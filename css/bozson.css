@@ -10253,3 +10253,6 @@ a.text-dark:hover, a.text-dark:focus {
   .head-logo a:hover, .head-logo a:focus {
     text-decoration: none;
     color: #0056b3; }
+
+.pubs li {
+  margin-bottom: 0.5rem; }
