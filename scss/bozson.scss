@@ -46,7 +46,7 @@ $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px
-);
+  );
 $container-max-widths: (
   sm: 540px,
   md: 720px
@@ -54,14 +54,15 @@ $container-max-widths: (
 
 // Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "themes";
 
 .head-logo {
   a {
-    color: $body-color;
-    width:  1.75rem;
+    color: var(--theme-text, $body-color);
+    width: 1.75rem;
     @include hover-focus {
       text-decoration: none;
-      color: $link-hover-color;
+      color: var(--theme-link-hover, $link-hover-color);
     }
     margin-bottom: 1rem;
   }
@@ -73,4 +74,8 @@ ul {
 
 .pubs li {
   margin-bottom: 0.75rem;
+}
+
+::selection {
+  background: #50fa7b
 }
