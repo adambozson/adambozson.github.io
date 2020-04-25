@@ -10279,16 +10279,40 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-bg: #282a36;
+    --theme-text: #f8f8f2;
+    --theme-headings: #BD93F9;
+    --theme-link: #8BE9FD;
+    --theme-link-hover: #40dbfc; } }
+
+body {
+  color: var(--theme-text, #212529);
+  background-color: var(--theme-bg, #fff); }
+
+a {
+  color: var(--theme-link, #007bff); }
+  a:hover, a:focus {
+    color: var(--theme-link-hover, #0056b3); }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--theme-headings, ); }
+
 .head-logo a {
-  color: #212529;
+  color: var(--theme-text, #212529);
   width: 1.75rem;
   margin-bottom: 1rem; }
   .head-logo a:hover, .head-logo a:focus {
     text-decoration: none;
-    color: #0056b3; }
+    color: var(--theme-link-hover, #0056b3); }
 
 ul {
   padding-left: 1.25rem; }
 
 .pubs li {
   margin-bottom: 0.75rem; }
+
+::selection {
+  background: #50fa7b; }
