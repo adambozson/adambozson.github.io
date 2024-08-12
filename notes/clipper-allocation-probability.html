@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Racing Across Oceans, With Friends | Adam Bozson</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Adam Bozson">
+
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    MathJax = {
+      options: {
+        enableMenu: false
+      }
+    }
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="content">
+    <div class="section">
+      <article class="section">
+        <h1>⛵️ Racing Across Oceans, With Friends</h1>
+        <p>
+          This year, I've been participating in training for the Clipper 2025-26 Round the World Yacht Race.
+          Learning to sail and live aboard a seventy-foot racing yacht is a fun challenge and the situation
+          quickly fosters team bonds and friendships.
+          At some point during the two weeks of training I've done so far, the question arose:
+        </p>
+        <blockquote>
+          What is the probability I'll be in the same race team as someone in the training crew?
+        </blockquote>
+        <p>
+          In this post, we'll calculate an answer to this and some follow-up questions.
+          But first, it's important to state an assumption: race crews are randomly allocated from the pool of
+          all participants.
+          We know this is untrue; crews are chosen to be balanced in age, experience, and skills.
+          For instance, two medics that train together will probably have a lower chance of racing together.
+          While this assumption might change the exact probabilities, it won't affect our overall conclusions.
+        </p>
+        <p>
+          There's one more caveat: I'm signed up to all of the eight legs of the race, but some crew swap in and out of the boat between legs.
+          We won't consider this in the calculations, but it can be done with some adjustments.
+          I'll point out when this becomes relevant.
+        </p>
+        <p>
+          I will do the calculations algebraically, but plug in numbers along the way to get a feel for
+          things.
+          We'll use:
+        </p>
+        <ul class="bullets">
+          <li>\(N=750\) as the total number of participants,</li>
+          <li>\(B=11\) as the number racing crews,</li>
+          <li>\(n=8\) as the number of people in a training crew (I had crews of 7 and 9 for my two weeks so
+            far).
+          </li>
+        </ul>
+        <p>
+          That means there are roughly \(\frac{N}{B} = 68\) people in each race team, although only those on
+          the same legs will race together.
+        </p>
+        <p>
+          To start, let's consider the probability of myself and another specific person to be in the same
+          race team.
+          This is given by the number of people in the team, excluding me, divided by the total number of
+          people \(N\), excluding me:
+          \[ P_1 = \frac{\frac{N}{B}-1}{N - 1} = \frac{\frac{750}{11} - 1}{750-1} = 9.0\% \]
+          (It's pretty much \(\frac{1}{11}\) as \(N\) rises above 150. The value of \(N\)
+          doesn't really impact the calculation much, so long as it's large.)
+        </p>
+        <p>
+          Now the probability of <em>not</em> racing with that person is \(1-P_1 = 91\%\).
+          As is often the case in these sorts of probability puzzles, it's easier to first compute the inverse
+          of the target scenario then subtract it from 1.
+          Under our assumption of random independent allocation, the probability that nobody from my training
+          crew is also on my race team is given by:
+          \[ P_0 = (1-P_1)^{n-1} = \left( 1 - \frac{\frac{750}{11} - 1}{750-1} \right)^{8-1} = 52\% \]
+        </p>
+        <p>
+          Therefore the final probability of racing alongside someone from my training crew is:
+          \[ P_{\geq 1} = 1 - P_0 = 48\% \]
+        </p>
+        <p>
+          It's a surprisingly high chance given the large numbers of participants and crews.
+          For leggers, the probability is lower since both \(N\) and \(n\) decrease, but it's still surprisingly good.
+          If I meet thirty other people over all the training weeks, there's a 94% probability I'll recognise
+          someone on my boat during one leg (my poor memory for names notwithstanding).
+          In fact, I have to select only eight other people on my race leg(s) to have a 50% chance of being on the
+          same boat as at least one of them.
+        </p>
+        <p>
+          I find this calculation interesting because it reminded me of <a
+            href="https://en.wikipedia.org/wiki/Birthday_problem">the birthday problem</a>, although it
+          turns out to be simpler in its construction.
+          Relatedly, we could ask what the probability of <em>any</em> two people in a training group being on
+          the same race team is: it's \( 1-(1-P_1)^{n \choose 2} = 93\% \).
+          We'd need a sample of just five people for there to be a greater than 50% chance of at least two of them
+          racing under the same team name.
+        </p>
+      </article>
+    </div>
+    <div class="section">
+      <a href="/">Adam Bozson</a>, August 2024
+    </div>
+  </div>
+</body>
+
+</html>
