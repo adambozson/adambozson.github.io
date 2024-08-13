@@ -90,3 +90,7 @@ span.date {
 blockquote {
     font-style: italic;
 }
+
+article a {
+    color: #007bff;
+}
