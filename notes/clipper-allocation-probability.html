@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="Adam Bozson">
+  <meta name="created" content="2024-08-12">
 
   <link rel="stylesheet" href="../style.css">
   <script>
@@ -25,7 +26,7 @@
       <article class="section">
         <h1>⛵️ Racing Across Oceans, With Friends</h1>
         <p>
-          This year, I've been participating in training for the Clipper 2025-26 Round the World Yacht Race.
+          This year I've been participating in training for the Clipper 2025-26 Round the World Yacht Race.
           Learning to sail and live aboard a seventy-foot racing yacht is a fun challenge and the situation
           quickly fosters team bonds and friendships.
           At some point during the two weeks of training I've done so far, the question arose:
@@ -42,7 +43,8 @@
           While this assumption might change the exact probabilities, it won't affect our overall conclusions.
         </p>
         <p>
-          There's one more caveat: I'm signed up to all of the eight legs of the race, but some crew swap in and out of the boat between legs.
+          There's one more caveat: I'm signed up to all of the eight legs of the race, but many crew swap in and out of
+          the boat between legs.
           We won't consider this in the calculations, but it can be done with some adjustments.
           I'll point out when this becomes relevant.
         </p>
@@ -69,15 +71,14 @@
           people \(N\), excluding me:
           \[ P_1 = \frac{\frac{N}{B}-1}{N - 1} = \frac{\frac{750}{11} - 1}{750-1} = 9.0\% \]
           (It's pretty much \(\frac{1}{11}\) as \(N\) rises above 150. The value of \(N\)
-          doesn't really impact the calculation much, so long as it's large.)
+          doesn't really impact these calculations much, so long as it's large.)
         </p>
         <p>
           Now the probability of <em>not</em> racing with that person is \(1-P_1 = 91\%\).
           As is often the case in these sorts of probability puzzles, it's easier to first compute the inverse
           of the target scenario then subtract it from 1.
           Under our assumption of random independent allocation, the probability that nobody from my training
-          crew is also on my race team is given by:
-          \[ P_0 = (1-P_1)^{n-1} = \left( 1 - \frac{\frac{750}{11} - 1}{750-1} \right)^{8-1} = 52\% \]
+          crew is also on my race team is given by \( P_0 = (1-P_1)^{n-1} = 52\% \).
         </p>
         <p>
           Therefore the final probability of racing alongside someone from my training crew is:
@@ -86,19 +87,25 @@
         <p>
           It's a surprisingly high chance given the large numbers of participants and crews.
           For leggers, the probability is lower since both \(N\) and \(n\) decrease, but it's still surprisingly good.
-          If I meet thirty other people over all the training weeks, there's a 94% probability I'll recognise
+          If I meet thirty other people over all four training weeks, there's a 94% probability I'll recognise
           someone on my boat during one leg (my poor memory for names notwithstanding).
           In fact, I have to select only eight other people on my race leg(s) to have a 50% chance of being on the
           same boat as at least one of them.
         </p>
         <p>
           I find this calculation interesting because it reminded me of <a
-            href="https://en.wikipedia.org/wiki/Birthday_problem">the birthday problem</a>, although it
+            href="https://en.wikipedia.org/wiki/Birthday_problem">the Birthday Problem</a>, although it
           turns out to be simpler in its construction.
           Relatedly, we could ask what the probability of <em>any</em> two people in a training group being on
-          the same race team is: it's \( 1-(1-P_1)^{n \choose 2} = 93\% \).
+          the same race team is: it's approximately \( 1 - \left( \frac{11}{11} \times
+          \frac{10}{11} \times \cdots\ \times \frac{3}{11} \right) = 97\% \), for large enough \(N\).
           We'd need a sample of just five people for there to be a greater than 50% chance of at least two of them
           racing under the same team name.
+        </p>
+        <p>
+          The overall conclusion here is that it's often more likely than we might think to end up racing alongside those we've trained with.
+          The Birthday Problem is often called a &lsquo;paradox&rsquo; because it <em>feels</em> like the probability should be diluted by the large number of possible pairings.
+          But trust the maths; the bonds we develop during the build-up to the race – down below, in the pub, or on a long night watch – may well be as useful as the sailing skills we learn.
         </p>
       </article>
     </div>
