@@ -94,3 +94,16 @@ blockquote {
 article a {
     color: #007bff;
 }
+
+details {
+    font-size: small;
+}
+
+details > summary {
+    cursor: pointer;
+}
+
+details > div {
+    padding-left: 12px;
+    border-left: 1px solid currentColor;
+}

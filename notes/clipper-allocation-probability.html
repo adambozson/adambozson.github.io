@@ -70,13 +70,42 @@
           This is given by the number of people in the team, excluding me, divided by the total number of
           people \(N\), excluding me:
           \[ P_1 = \frac{\frac{N}{B}-1}{N - 1} = \frac{\frac{750}{11} - 1}{750-1} = 9.0\% \]
-          (It's pretty much \(\frac{1}{11}\) as \(N\) rises above 150. The value of \(N\)
+          (It's pretty much one in eleven as \(N\) rises above 150, as you'd expect. The value of \(N\)
           doesn't really impact these calculations much, so long as it's large.)
         </p>
+        <details>
+          <summary>Nitpicky maths starting from an exact formula</summary>
+          <div>
+            <p>
+              The formula for \(P_1\) above is an approximation that applies when \(N \gg B\).
+              The exact form is given by counting all the pairs of people that could be in the same team,
+              divided by the total number of ordered pairs of people:
+              \[ P_1 = \frac{\sum_{k=1}^B s_k \left( s_k - 1 \right)}{N\left( N - 1 \right)} \]
+              where \(s_k\) is the number of people in the \(k\)-th team.
+              Let's define \(q=\big\lfloor\frac{N}{B}\big\rfloor\) and \(r=N\ \mod B\).
+              Assuming round-robin team allocations, there are \(r\) teams of size \(q+1\) and \(B-r\) teams of size
+              \(q\), so the sum in the numerator is:
+              \[
+              \begin{aligned}
+              \sum_{k=1}^B s_k \left( s_k - 1 \right) &= r\left( q+1 \right)\left( q \right) + \left( B-r \right)\left(
+              q \right)\left( q-1 \right) \\
+              &= Bq^2 - Bq + 2rq
+              \end{aligned}
+              \]
+            </p>
+            <p>
+              Now let's look at what happens when \(N \gg B\).
+              In this case \(q\) is close to \(\frac{N}{B}\) and \(r\) at most \(B-1\), which is small.
+              So we can approximate the sum as \(\frac{N^2}{B} - N\).
+              Finally we divide by the total number of pairings and cancel out the common factor of \(N\):
+              \[ P_1 \approx \frac{\frac{N}{B} - 1}{N - 1} \]
+            </p>
+          </div>
+        </details>
         <p>
           Now the probability of <em>not</em> racing with that person is \(1-P_1 = 91\%\).
           As is often the case in these sorts of probability puzzles, it's easier to first compute the inverse
-          of the target scenario then subtract it from 1.
+          of the target scenario then subtract it from one.
           Under our assumption of random independent allocation, the probability that nobody from my training
           crew is also on my race team is given by \( P_0 = (1-P_1)^{n-1} = 52\% \).
         </p>
@@ -87,7 +116,7 @@
         <p>
           It's a surprisingly high chance given the large numbers of participants and crews.
           For leggers, the probability is lower since both \(N\) and \(n\) decrease, but it's still surprisingly good.
-          If I meet thirty other people over all four training weeks, there's a 94% probability I'll recognise
+          If I meet thirty other people over all four training weeks, there's a 94% probability I'll already know
           someone on my boat during one leg (my poor memory for names notwithstanding).
           In fact, I have to select only eight other people on my race leg(s) to have a 50% chance of being on the
           same boat as at least one of them.
