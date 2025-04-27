@@ -17,7 +17,7 @@
       },
       tex: {
         macros: {
-          vec: ["{\\mathbf{#1}}", 1],
+          vec: ["{\\boldsymbol{#1}}", 1],
           dif: ["{\\mathrm{d}}", 0],
           Dif: ["{\\mathrm{D}}", 0],
         }
@@ -68,8 +68,7 @@
         <p>
           Dynamics in classical mechanics stem from Newton's second law, which I express as
           \[ \vec{f} = \frac{\dif \vec{p}}{\dif t} = \frac{\dif }{\dif t} \left( m \vec{v} \right) \]
-          where \(\vec{f}\) is the overall force on the object and \(\vec{p}\) is its momentum (\(\vec{p} = m\vec{v}\)
-          with mass \(m\) and velocity \(\vec{v}\)).
+          where \(\vec{f}\) is the overall force on the object and \(\vec{p}\) is its momentum.
           This is valid in an intertial reference frame.
           The rotational analogue is also valid:
           \[ \vec{\tau} = \frac{\dif \vec{J}}{\dif t} = \frac{\dif}{\dif t}\left( I^\prime \vec{\omega} \right)
@@ -136,7 +135,7 @@
           Remember that \(I = \text{diag}\!\left(I_{xx}, I_{yy}, I_{zz}\right)\) is a matrix.
         </p>
 
-        <h2>The spinning phone problem</h2>
+        <h2>The spinning phone</h2>
         <p>
           For torque-free situations, such as the spinning phone, \(\vec{T} = \vec{0}\) and Euler's equations
           \(\eqref{euler}\) simplify to
