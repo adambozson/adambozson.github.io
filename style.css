@@ -8,7 +8,7 @@ body {
     text-decoration: none;
 }
 
-h1 .grad1 {
+h1 {
     background: unset;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #fd746c, #ff9068);
@@ -18,14 +18,6 @@ h1 .grad1 {
     background-clip: unset;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-h2 {
-    color: #111;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 a {
@@ -95,6 +87,10 @@ article a {
     color: #007bff;
 }
 
+article mjx-math > a {  /* Don't highlight MathJax eqref */
+    color: inherit;
+}
+
 details {
     font-size: small;
 }
@@ -106,4 +102,10 @@ details > summary {
 details > div {
     padding-left: 12px;
     border-left: 1px solid currentColor;
+}
+
+#content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
