@@ -103,3 +103,9 @@ details > div {
     padding-left: 12px;
     border-left: 1px solid currentColor;
 }
+
+#content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
